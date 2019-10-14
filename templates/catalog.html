@@ -8,4 +8,102 @@
             <h1>Сравнение телефонов</h1>
         </div>
     </div>
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="row">Наименование</th>
+            {% for phone in phones_info %}
+              <th>{{ phone.name }}</th>
+            {% endfor %}
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Стоимость</th>
+            {% for phone in phones_info %}
+              <td>{{ phone.price }}</td>
+            {% endfor %}
+          </tr>
+          <tr>
+            <th scope="row">Операционная система</th>
+            {% for phone in phones_info %}
+              <td>{{ phone.os }}</td>
+            {% endfor %}
+          </tr>
+          <tr>
+            <th scope="row">Оперативная память</th>
+            {% for phone in phones_info %}
+              <td>{{ phone.ram }}</td>
+            {% endfor %}
+          </tr>
+          <tr>
+            <th scope="row">Камера</th>
+            {% for phone in phones_info %}
+              <td>{{ phone.camera }}</td>
+            {% endfor %}
+          </tr>
+          <tr>
+            <th scope="row">Процессор</th>
+            {% for phone in phones_info %}
+              <td>{{ phone.cpu }}</td>
+            {% endfor %}
+          </tr>
+          <tr>
+            <th scope="row">Разрешение экрана</th>
+            {% for phone in phones_info %}
+              <td>{{ phone.screen }}</td>
+            {% endfor %}
+          </tr>
+          <tr>
+            <th scope="row">Карта памяти</th>
+            {% for phone in phones_info %}
+              {% if phone.max_memory %}
+                <td>{{ phone.max_memory }}</td>
+              {% else %}
+                <td>-</td>
+              {% endif %}
+            {% endfor %}
+          </tr>
+          <tr>
+            <th scope="row">FM-радио</th>
+            {% for phone in phones_info %}
+              {% if phone.fm_radio %}
+                <td>Есть</td>
+              {% else %}
+                <td>-</td>
+              {% endif %}
+            {% endfor %}
+          </tr>
+          <tr>
+            <th scope="row">SIM-карта</th>
+            {% for phone in phones_info %}
+              {% if phone.sim %}
+                <td>{{ phone.sim }}</td>
+              {% else %}
+                <td>-</td>
+              {% endif %}
+            {% endfor %}
+          </tr>
+          <tr>
+            <th scope="row">Защита экрана</th>
+            {% for phone in phones_info %}
+              {% if phone.screen_protection %}
+                <td>{{ phone.screen_protection }}</td>
+              {% else %}
+                <td>-</td>
+              {% endif %}
+            {% endfor %}
+          </tr>
+          <tr>
+            <th scope="row">Двойная камера</th>
+            {% for phone in phones_info %}
+              {% if phone.dual_camera %}
+                <td>Есть</td>
+              {% else %}
+                <td>-</td>
+              {% endif %}
+            {% endfor %}
+          </tr>
+        </tbody>
+    </table>
 {% endblock %}
